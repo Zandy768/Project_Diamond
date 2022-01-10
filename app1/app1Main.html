@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module app1Main</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>app1Main</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/lxs395/abist411fa20Team6/app1/app1Main.py">/home/lxs395/abist411fa20Team6/app1/app1Main.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;Project:&nbsp;app1<br>
+#&nbsp;Purpose&nbsp;Details:&nbsp;To&nbsp;learn&nbsp;how&nbsp;to&nbsp;get&nbsp;a&nbsp;url&nbsp;and&nbsp;use&nbsp;clients&nbsp;connect&nbsp;to&nbsp;servers&nbsp;using&nbsp;networking<br>
+#&nbsp;Course:&nbsp;IST&nbsp;411<br>
+#&nbsp;Author:&nbsp;Team&nbsp;6<br>
+#&nbsp;Date&nbsp;Developed:9/25/20<br>
+#&nbsp;Last&nbsp;Date&nbsp;Changed:10/15/20<br>
+#&nbsp;Rev:4</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="Crypto.Cipher.AES.html">Crypto.Cipher.AES</a><br>
+<a href="json.html">json</a><br>
+</td><td width="25%" valign=top><a href="pika.html">pika</a><br>
+<a href="socket.html">socket</a><br>
+</td><td width="25%" valign=top><a href="ssl.html">ssl</a><br>
+<a href="time.html">time</a><br>
+</td><td width="25%" valign=top><a href="urllib.html">urllib</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="app1Main.html#App1">App1</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="App1">class <strong>App1</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="App1-decryptPayloadAES"><strong>decryptPayloadAES</strong></a>(payload)</dt><dd><tt>Decryptes&nbsp;encrypted&nbsp;Payload&nbsp;from&nbsp;app4.<br>
+&nbsp;<br>
+:param&nbsp;payload:&nbsp;Encrypted&nbsp;payload&nbsp;from&nbsp;app4<br>
+:return:&nbsp;Returns&nbsp;nothing</tt></dd></dl>
+
+<dl><dt><a name="App1-getJSONPayload"><strong>getJSONPayload</strong></a>(link)</dt><dd><tt>Gets&nbsp;JSON&nbsp;payload&nbsp;from&nbsp;URL.<br>
+&nbsp;<br>
+:param&nbsp;link:Payload&nbsp;link<br>
+:return:&nbsp;Returns&nbsp;retrieved&nbsp;payload</tt></dd></dl>
+
+<dl><dt><a name="App1-getMQpayload"><strong>getMQpayload</strong></a>()</dt><dd><tt>Gets&nbsp;RabbitMQ&nbsp;payload&nbsp;from&nbsp;app4.<br>
+&nbsp;<br>
+:return:&nbsp;returns&nbsp;nothing</tt></dd></dl>
+
+<dl><dt><a name="App1-logActivity"><strong>logActivity</strong></a>(message)</dt><dd><tt>Sends&nbsp;activity/log&nbsp;to&nbsp;app5<br>
+&nbsp;<br>
+:param&nbsp;message:&nbsp;Success/Failed&nbsp;message&nbsp;to&nbsp;app5<br>
+:return:&nbsp;Returns&nbsp;nothing</tt></dd></dl>
+
+<dl><dt><a name="App1-saveJSONPayload"><strong>saveJSONPayload</strong></a>(payload)</dt><dd><tt>Saves&nbsp;JSON&nbsp;payload&nbsp;as&nbsp;a&nbsp;file.<br>
+&nbsp;<br>
+:param&nbsp;payload:&nbsp;The&nbsp;retrieved&nbsp;payload<br>
+:return:&nbsp;returns&nbsp;nothing</tt></dd></dl>
+
+<dl><dt><a name="App1-sendTLSJSONPayload"><strong>sendTLSJSONPayload</strong></a>(payload)</dt><dd><tt>Sends&nbsp;activity/log&nbsp;to&nbsp;app5<br>
+&nbsp;<br>
+:param&nbsp;payload:&nbsp;json&nbsp;payload&nbsp;to&nbsp;send&nbsp;to&nbsp;App2<br>
+:return:&nbsp;Returns&nbsp;nothing</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

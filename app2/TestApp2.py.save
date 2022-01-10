@@ -1,0 +1,26 @@
+import unittest, socket, ssl, urllib.request, json
+
+from app2Main import App2
+
+class TestApp2(unittest.TestCase):
+
+	def test_recieveTLSJSONPayload(sel		failCondition = False
+		try:
+			App2.recieveTLSJSONPayload()
+			App1.sendTLSJSONPayload(samplePayload)
+		except:
+			failCondition = True
+		self.assertFalse(failCondition)
+
+	def test_logActivity(self):
+		sampleMessage = "Hello World"
+		failCondition = False
+		try:
+			App2.logActivity(sampleMessage)
+		except:
+			failCondition = True
+		self.assertFalse(failCondition)
+
+if __name__ == '__main__':
+	unittest.main()
+

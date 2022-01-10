@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module app2Main</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>app2Main</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/lxs395/abist411fa20Team6/app2/app2Main.py">/home/lxs395/abist411fa20Team6/app2/app2Main.py</a></font></td></tr></table>
+    <p><tt>Project:&nbsp;<a href="#App2">App2</a><br>
+Purpose&nbsp;Details:&nbsp;To&nbsp;learn&nbsp;how&nbsp;clients&nbsp;connect&nbsp;to&nbsp;servers&nbsp;using&nbsp;networking<br>
+Course:&nbsp;IST&nbsp;411<br>
+Author:&nbsp;Team&nbsp;6<br>
+Date&nbsp;Developed:9/26/20<br>
+Last&nbsp;Date&nbsp;Changed:10/15/20<br>
+Rev:2</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="base64.html">base64</a><br>
+<a href="getpass.html">getpass</a><br>
+</td><td width="25%" valign=top><a href="hashlib.html">hashlib</a><br>
+<a href="hmac.html">hmac</a><br>
+</td><td width="25%" valign=top><a href="json.html">json</a><br>
+<a href="pysftp.html">pysftp</a><br>
+</td><td width="25%" valign=top><a href="socket.html">socket</a><br>
+<a href="ssl.html">ssl</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="app2Main.html#App2">App2</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="App2">class <strong>App2</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="App2-createHashFile"><strong>createHashFile</strong></a>(fileName, payload)</dt><dd><tt>Creates&nbsp;hash&nbsp;file.<br>
+&nbsp;<br>
+:param&nbsp;fileName:&nbsp;Name&nbsp;of&nbsp;hash&nbsp;file<br>
+:param&nbsp;payload:&nbsp;Hashed&nbsp;payload<br>
+:return:&nbsp;Returns&nbsp;nothing</tt></dd></dl>
+
+<dl><dt><a name="App2-createJSONFile"><strong>createJSONFile</strong></a>(fileName, payload)</dt><dd><tt>Creates&nbsp;JSON&nbsp;file.<br>
+&nbsp;<br>
+:param&nbsp;fileName:&nbsp;Name&nbsp;of&nbsp;JSON&nbsp;file<br>
+:param&nbsp;payload:&nbsp;JSON&nbsp;Payload<br>
+:return:&nbsp;Returns&nbsp;nothing</tt></dd></dl>
+
+<dl><dt><a name="App2-encodePayloadHMAC"><strong>encodePayloadHMAC</strong></a>(payload)</dt><dd><tt>Encodes&nbsp;the&nbsp;Payload&nbsp;with&nbsp;HMAC.<br>
+&nbsp;<br>
+:param&nbsp;payload:&nbsp;JSON&nbsp;Payload&nbsp;receieved&nbsp;from&nbsp;App1<br>
+:return:&nbsp;Returns&nbsp;payload&nbsp;encoded&nbsp;in&nbsp;HMAC</tt></dd></dl>
+
+<dl><dt><a name="App2-hashPayloadHMAC"><strong>hashPayloadHMAC</strong></a>(payload)</dt><dd><tt>Hashes&nbsp;HMAC&nbsp;payload.<br>
+&nbsp;<br>
+:param&nbsp;payload:&nbsp;HMAC&nbsp;payload<br>
+:return:&nbsp;returns&nbsp;hashed&nbsp;payload</tt></dd></dl>
+
+<dl><dt><a name="App2-logActivity"><strong>logActivity</strong></a>(message)</dt><dd><tt>Sends&nbsp;activity/log&nbsp;to&nbsp;app5<br>
+&nbsp;<br>
+:param&nbsp;message:&nbsp;Success/Failed&nbsp;message&nbsp;to&nbsp;app5<br>
+:return:&nbsp;Returns&nbsp;nothing</tt></dd></dl>
+
+<dl><dt><a name="App2-recieveTLSJSONPayload"><strong>recieveTLSJSONPayload</strong></a>()</dt><dd><tt>Receives&nbsp;JSON&nbsp;payload&nbsp;from&nbsp;App1&nbsp;via&nbsp;TLS.<br>
+&nbsp;<br>
+:return:&nbsp;Returns&nbsp;nothing</tt></dd></dl>
+
+<dl><dt><a name="App2-sendSFTP"><strong>sendSFTP</strong></a>(payload, hash)</dt><dd><tt>Sends&nbsp;file&nbsp;to&nbsp;app3&nbsp;via&nbsp;SFTP.<br>
+&nbsp;<br>
+:param&nbsp;payload:&nbsp;Hashed&nbsp;payload<br>
+:param&nbsp;hash:&nbsp;Hash<br>
+:return:&nbsp;Returns&nbsp;nothing</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

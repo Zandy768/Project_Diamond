@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module app4Main</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>app4Main</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/lxs395/abist411fa20Team6/app4/app4Main.py">/home/lxs395/abist411fa20Team6/app4/app4Main.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;Project:&nbsp;<a href="#App4">App4</a><br>
+#&nbsp;Purpose&nbsp;Details:<br>
+#&nbsp;Course:&nbsp;IST&nbsp;411<br>
+#&nbsp;Author:&nbsp;Team&nbsp;6<br>
+#&nbsp;Date&nbsp;Developed:11/11/20<br>
+#&nbsp;Last&nbsp;Date&nbsp;Changed:11/11/20<br>
+#&nbsp;Rev:1</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="Crypto.Cipher.AES.html">Crypto.Cipher.AES</a><br>
+<a href="Pyro4.html">Pyro4</a><br>
+</td><td width="25%" valign=top><a href="json.html">json</a><br>
+<a href="pika.html">pika</a><br>
+</td><td width="25%" valign=top><a href="serpent.html">serpent</a><br>
+<a href="socket.html">socket</a><br>
+</td><td width="25%" valign=top><a href="zlib.html">zlib</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="app4Main.html#App4">App4</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="App4">class <strong>App4</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="App4-decompressPayload"><strong>decompressPayload</strong></a>(payload)</dt><dd><tt>decompresses&nbsp;the&nbsp;payload&nbsp;and&nbsp;then&nbsp;ecrypts&nbsp;it&nbsp;via&nbsp;AES&nbsp;and&nbsp;sends&nbsp;it&nbsp;to&nbsp;App1<br>
+&nbsp;<br>
+:param&nbsp;payload:&nbsp;payload&nbsp;to&nbsp;be&nbsp;decompressed<br>
+:return:&nbsp;nothing</tt></dd></dl>
+
+<dl><dt><a name="App4-encryptPayloadAES"><strong>encryptPayloadAES</strong></a>(payload)</dt><dd><tt>Encrypts&nbsp;a&nbsp;payload&nbsp;via&nbsp;AES&nbsp;and&nbsp;sends&nbsp;it&nbsp;to&nbsp;App1<br>
+&nbsp;<br>
+:param&nbsp;payload:&nbsp;payload&nbsp;to&nbsp;be&nbsp;encrypted<br>
+:return:&nbsp;nothing</tt></dd></dl>
+
+<dl><dt><a name="App4-logActivity"><strong>logActivity</strong></a>(message)</dt><dd><tt>Sends&nbsp;activity/log&nbsp;to&nbsp;app5<br>
+&nbsp;<br>
+:param&nbsp;message:&nbsp;Success/Failed&nbsp;message&nbsp;to&nbsp;app5<br>
+:return:&nbsp;Returns&nbsp;nothing</tt></dd></dl>
+
+<dl><dt><a name="App4-receivePayload"><strong>receivePayload</strong></a>(self, payloadComp)</dt><dd><tt>Recieves&nbsp;payload&nbsp;from&nbsp;App3&nbsp;and&nbsp;activates&nbsp;the&nbsp;decompression&nbsp;method</tt></dd></dl>
+
+<dl><dt><a name="App4-sendPayloadRabbitMQ"><strong>sendPayloadRabbitMQ</strong></a>(payload)</dt><dd><tt>Sends&nbsp;an&nbsp;encrypted&nbsp;payload&nbsp;to&nbsp;App1<br>
+&nbsp;<br>
+:param&nbsp;payload:&nbsp;payload&nbsp;to&nbsp;be&nbsp;sent<br>
+:return:&nbsp;nothing</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

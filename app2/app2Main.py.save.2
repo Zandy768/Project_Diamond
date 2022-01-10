@@ -1,0 +1,108 @@
+# Project: App2
+# Purpose Details: To learn how clients connect to servers using networking
+# Course: IST 411
+# Author: Team 6
+# Date Developed:9/26/20
+# Last Date Changed:10/15/20
+# Rev:2
+
+import socket, json, ssl, base64, hashlib, hmac, pysftp, getpass
+
+class App2:
+
+	#recieves JSON from App1 via TLS
+	def recieveTLSJSONPayload():
+		s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		serversocket = ssl.wrap_socket(s,
+			server_side=True,
+			certfile="server.crt",
+			keyfile="server.key")
+		serversocket.bind(('localhost', 8080))
+		serversocket.listen(5)
+		while True:
+			print("waiting on connection")
+			(clientsocket, address) = serversocket.accept()
+			payload = clientsocket.recv(1024).decode('utf-8')
+			with open('sample.json' , 'w') as outFile:
+				jsonObj = outFile.write(json.dumps(payload))
+			break
+
+	#encode hmac payload
+	def encodePayloadHMAC(payload):
+		encodedPayload = base64.b64encode(bytes(payload, 'utf-8'))
+		return encodedPayload
+
+	#hash hmac payload
+	def hashPayloadHMAC(payload):
+		key = "This is a sample key"
+		encodedKey = key.encode('utf-8')
+		encodedPayload = payload.encode('utf-8')
+		digesterPayload = hmac.new(encodedKey, encodedPayload, hashlib.sha256)
+		digestPayload = digesterPayload.hexdigest()
+		return digestPayload
+
+	#sends file via SFTP
+	def sendSFTP(cnopts, p):
+		cinfo = {'cnopts':cnopts, 'host':'oz-ist-lvmjxo.oz.psu.edu', 'username':'lxs395', 'password':p, 'port':1855}
+		with pysftp.Connection(**cinfo) as sftp:
+			files = sftp.listdir('abist411fa20Team6/app2/')
+			sftp.get('abist411fa20Team6/app2/payloadFile.json')
+			sftp.put('payloadFile.txt', 'abist411fa20Team6/app3/payloadFile.json')
+			sftp.get('abist411fa20Team6/app2/hash.txt')
+			sftp.put('hash.txt', 'abist411fa20Team6/app3/hash.txt')
+
+	#creates JSON file
+	def createFile(fileName, payload):
+		with open(fileName, 'w') as outfile:
+			payload = payload.decode('utf-8')
+			print(payload)
+			outfile.write(json.dump(payload))
+
+	def createHashFile(fileName, payload):
+		with open(filename, 'w') as outfile:
+			payload = payload.decode('utf-8')
+			print
+			outfile.write(payload)
+
+	#sends logs to App5
+	def logActivity(message):
+		s2 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		s2.connect(('localhost', 9999))
+		byteMsg = bytes(message, 'utf-8')
+		s2.send(byteMsg)
+		s2.close()
+
+
+if __name__ == '__main__':
+	try:
+		App2.recieveTLSJSONPayload()
+		with open('sample.json', 'r') as infile:
+			inPayload = json.load(infile)
+		App2.logActivity("App 2 successfully recieved and printed JSON Payload")
+		print("got payload")
+
+		#encodedPayload = App2.encodePayloadHMAC(inPayload)
+		#App2.createFile('payloadFile.txt', encodedPayload)
+		#print("encoded payload")
+
+		App2.createFile('payloadFile.json', inPayload)
+		print("Payload Saved")
+
+		hashedPayload = App2.hashPayloadHMAC(inPayload)
+		App2.createHashFile('hash.txt', hashedPayload.encode('utf-8'))
+		print("hashed")
+		App2.logActivity("App 2 successfully hashed Payload")
+		print("hashed payload")
+
+		p = getpass.getpass()
+		cnopts = pysftp.CnOpts()
+		cnopts.hostkeys = None
+
+		App2.sendSFTP(cnopts, p)
+		App2.logActivity("App 2 successfully sent payload via SFTP")
+
+	except Exception as e:
+		print(e)
+		failMsg = "App 2 has failed to recieve and/or send JSON Payload"
+		App2.logActivity(failMsg)
+
